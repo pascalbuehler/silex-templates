@@ -22,6 +22,10 @@ class ComposerStaticInit771811408e9aaea7cca6fa4126b1ffc5
             'Symfony\\Bridge\\Twig\\' => 20,
             'Silex\\' => 6,
         ),
+        'L' => 
+        array (
+            'Lokhman\\Silex\\Config\\' => 21,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -56,6 +60,10 @@ class ComposerStaticInit771811408e9aaea7cca6fa4126b1ffc5
         'Silex\\' => 
         array (
             0 => __DIR__ . '/..' . '/silex/silex/src/Silex',
+        ),
+        'Lokhman\\Silex\\Config\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lokhman/silex-config/src',
         ),
     );
 

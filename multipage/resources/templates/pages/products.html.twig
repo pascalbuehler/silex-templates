@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+{% set active = 'Products' %}
+{% block content %}
+<div class="row">
+{% for product in products %}
+    <div class="col-xs-6 col-sm-4 col-md-3">
+        <img class="img-responsive img-thumbnail" src="{{ product.img }}" alt="{{ product.name }}">
+        <p class="text-center img-caption">{{ product.name }}</p>
+    </div>
+{% endfor %}
+</div class="row">
+{% endblock %}

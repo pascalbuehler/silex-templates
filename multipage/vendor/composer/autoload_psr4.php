@@ -14,4 +14,5 @@ return array(
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Symfony\\Bridge\\Twig\\' => array($vendorDir . '/symfony/twig-bridge'),
     'Silex\\' => array($vendorDir . '/silex/silex/src/Silex'),
+    'Lokhman\\Silex\\Config\\' => array($vendorDir . '/lokhman/silex-config/src'),
 );

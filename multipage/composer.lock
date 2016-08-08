@@ -4,9 +4,50 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ab2b0dbc13ae627810edb909c09e832a",
-    "content-hash": "b935e1cdd3bb5731ffd9b2f8bb3a702f",
+    "hash": "c613d030ba2688b1f367f57b19d640f0",
+    "content-hash": "5eaa1a5346f649151e706f60c952d626",
     "packages": [
+        {
+            "name": "lokhman/silex-config",
+            "version": "2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lokhman/silex-config.git",
+                "reference": "91f7b874664cdb96354c47d9690ecf4e11e412aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lokhman/silex-config/zipball/91f7b874664cdb96354c47d9690ecf4e11e412aa",
+                "reference": "91f7b874664cdb96354c47d9690ecf4e11e412aa",
+                "shasum": ""
+            },
+            "require": {
+                "silex/silex": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lokhman\\Silex\\Config\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Lokhman",
+                    "email": "alex.lokhman@gmail.com"
+                }
+            ],
+            "description": "Simple JSON configuration provider for Silex micro-framework",
+            "keywords": [
+                "config",
+                "json",
+                "silex"
+            ],
+            "time": "2016-06-30 11:50:56"
+        },
         {
             "name": "pimple/pimple",
             "version": "v3.0.2",

@@ -717,5 +717,48 @@
         ],
         "description": "Symfony Twig Bridge",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "lokhman/silex-config",
+        "version": "2.1",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/lokhman/silex-config.git",
+            "reference": "91f7b874664cdb96354c47d9690ecf4e11e412aa"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/lokhman/silex-config/zipball/91f7b874664cdb96354c47d9690ecf4e11e412aa",
+            "reference": "91f7b874664cdb96354c47d9690ecf4e11e412aa",
+            "shasum": ""
+        },
+        "require": {
+            "silex/silex": "~2.0"
+        },
+        "time": "2016-06-30 11:50:56",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Lokhman\\Silex\\Config\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Alexander Lokhman",
+                "email": "alex.lokhman@gmail.com"
+            }
+        ],
+        "description": "Simple JSON configuration provider for Silex micro-framework",
+        "keywords": [
+            "config",
+            "json",
+            "silex"
+        ]
     }
 ]

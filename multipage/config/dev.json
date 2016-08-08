@@ -1,0 +1,26 @@
+{
+    "version": "1.0",
+    "pages": {
+        "Home": {
+            "name": "Home",
+            "route": "/",
+            "controller": "HomeController",
+            "controllermethod": "home",
+            "template": "pages/home.html.twig"
+        },
+        "Products": {
+            "name": "Products",
+            "route": "/products",
+            "controller": "ProductsController",
+            "controllermethod": "products",
+            "template": "pages/products.html.twig"
+        },
+        "About": {
+            "name": "About",
+            "route": "/about",
+            "controller": "AboutController",
+            "controllermethod": "about",
+            "template": "pages/about.html.twig"
+        }
+    }
+}

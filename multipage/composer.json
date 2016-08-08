@@ -1,6 +1,7 @@
 {
     "require": {
         "silex/silex": "~2.0",
-        "symfony/twig-bridge": "~2.3"
+        "symfony/twig-bridge": "~2.3",
+        "lokhman/silex-config": "^2.1"
     }
 }
