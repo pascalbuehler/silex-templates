@@ -32,7 +32,6 @@ $app['twig'] = $app->extend('twig', function (\Twig_Environment $twig, \Silex\Ap
 
         return sprintf($base.'/'.$asset, ltrim($asset, '/'));
     }));
-
     return $twig;
 });
         
@@ -40,7 +39,7 @@ $app['twig'] = $app->extend('twig', function (\Twig_Environment $twig, \Silex\Ap
 use Lokhman\Silex\Config\ConfigServiceProvider;
 $app->register(new ConfigServiceProvider(__DIR__ . '/../config'));
 $app->extend('twig', function($twig, $app) {
-    $twig->addGlobal('pi', 3.14);
+    $twig->addGlobal('version', $app['version']);
     $twig->addGlobal('pages', $app['pages']);
     return $twig;
 });
@@ -52,11 +51,12 @@ foreach($app['pages'] as $pageConfig) {
         ->bind($pageConfig['name'])
         ->after(function($request, $response) use($app, $pageConfig) {
             $data = $app[$pageConfig['controller'].'.data'];
-            $data['currentPage'] = $pageConfig['name'];
+            $data['currentPageId'] = $pageConfig['id'];
+            $data['currentParentPageId'] = $pageConfig['parentid'];
             $content =  $app['twig']->render($pageConfig['template'], $data);
             $response->setContent($content);
             return $response;
-    });
+        });
 }
 
 // Run

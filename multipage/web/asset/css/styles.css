@@ -2,9 +2,15 @@
     font-size: 1.5em;
     font-weight: bold;
 }
-.transition {
+.img-hover-transition {
     -webkit-transform: scale(0.95); 
     -moz-transform: scale(0.95);
     -o-transform: scale(0.95);
     transform: scale(0.95);
+}
+.product a {
+    text-decoration: none;
+}
+.product p {
+    margin: 1em 0em 0em;
 }

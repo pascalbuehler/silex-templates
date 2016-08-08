@@ -18,13 +18,21 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="{{ url('Home') }}">Multipage</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ url('Home') }}">Multipage v{{ version }}</a>
           </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
 {% for page in pages %}
-            <li {% if page.name == currentPage %}class="active"{% endif %}><a href="{{ path(page.name) }}">{{ page.name }}</a></li>
+    {% if page.level==0 %}
+            <li {% if page.id == currentPageId or page.id == currentParentPageId %}class="active"{% endif %}><a href="{{ path(page.name) }}">{{ page.name }}</a></li>
+    {% endif %}
 {% endfor %}
           </ul>
         </div>

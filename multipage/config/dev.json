@@ -1,22 +1,41 @@
 {
-    "version": "1.0",
+    "version": "1.1",
     "pages": {
         "Home": {
+            "id": 1,
+            "parentid": 1,
             "name": "Home",
+            "level": 0,
             "route": "/",
             "controller": "HomeController",
             "controllermethod": "home",
             "template": "pages/home.html.twig"
         },
         "Products": {
+            "id": 2,
+            "parentid": 2,
             "name": "Products",
+            "level": 0,
             "route": "/products",
             "controller": "ProductsController",
             "controllermethod": "products",
             "template": "pages/products.html.twig"
         },
+        "ProductDetail": {
+            "id": 21,
+            "parentid": 2,
+            "name": "ProductDetail",
+            "level": 1,
+            "route": "/products/{id}",
+            "controller": "ProductsController",
+            "controllermethod": "productdetail",
+            "template": "pages/productdetail.html.twig"
+        },
         "About": {
+            "id": 3,
+            "parentid": 3,
             "name": "About",
+            "level": 0,
             "route": "/about",
             "controller": "AboutController",
             "controllermethod": "about",

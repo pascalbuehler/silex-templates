@@ -1,8 +1,8 @@
 $(document).ready(function(){
-    $('.img-responsive').hover(function() {
-        $(this).addClass('transition');
+    $('.product').hover(function() {
+        $('.img-responsive', this).addClass('img-hover-transition');
     
     }, function() {
-        $(this).removeClass('transition');
+        $('.img-responsive', this).removeClass('img-hover-transition');
     });
 });

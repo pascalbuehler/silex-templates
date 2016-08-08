@@ -1,12 +1,13 @@
 {% extends 'layout.html.twig' %}
-{% set active = 'Products' %}
 {% block content %}
 <div class="row">
-{% for product in products %}
-    <div class="col-xs-6 col-sm-4 col-md-3">
-        <img class="img-responsive img-thumbnail" src="{{ product.img }}" alt="{{ product.name }}">
-        <p class="text-center img-caption">{{ product.name }}</p>
+{% for productid, product in products %}
+    <div class="product col-xs-6 col-sm-4 col-md-3">
+        <a href="{{ path('ProductDetail', {id: productid}) }}">
+            <p class="img-caption">{{ product.name }}</p>
+            <img class="img-responsive img-thumbnail" src="{{ product.img }}" alt="{{ product.name }}">
+        </a>
     </div>
 {% endfor %}
-</div class="row">
+</div>
 {% endblock %}
