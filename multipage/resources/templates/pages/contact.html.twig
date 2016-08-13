@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+{% form_theme form 'form/form_bootstrap3_horizontal_layout.html.twig' %}
+{% block content %}
+{% if form.vars.submitted and form.vars.valid %}
+    Thx for sending {{ form.name.vars.value }}
+{% else %}
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+{% endif %}
+{% endblock %}

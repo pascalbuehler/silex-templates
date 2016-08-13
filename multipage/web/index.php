@@ -9,13 +9,16 @@ require_once __DIR__.'/../src/classes/ControllerResolver.class.php';
 unset($PHP_SELF);
 unset($_SERVER['PHP_SELF']);
 
+// ERROR REPORTING
+error_reporting(E_ALL);
+ini_set('dislay_errors', 1);
+
 // TIMEZONE
 date_default_timezone_set('UTC');
 
 // SILEX
 // Init
 $app = new Silex\Application();
-$app['debug'] = true;
 
 // Add ControllerResolver
 $app['resolver'] = function($app) {
@@ -34,7 +37,19 @@ $app['twig'] = $app->extend('twig', function (\Twig_Environment $twig, \Silex\Ap
     }));
     return $twig;
 });
-        
+
+// Forms
+use Silex\Provider\FormServiceProvider;
+$app->register(new FormServiceProvider());
+$app->register(new Silex\Provider\ValidatorServiceProvider());
+
+// Translations
+$app->register(new Silex\Provider\TranslationServiceProvider(), array(
+    'locale' => 'en',
+    'translator.domains' => array(),
+));
+$app['translator']->setLocale('en');
+
 // Load config
 use Lokhman\Silex\Config\ConfigServiceProvider;
 $app->register(new ConfigServiceProvider(__DIR__ . '/../config'));
@@ -47,7 +62,7 @@ $app->extend('twig', function($twig, $app) {
 // Routes for the pages
 foreach($app['pages'] as $pageConfig) {
     require_once __DIR__.'/../src/controllers/'.$pageConfig['controller'].'.class.php';
-    $x = $app->get(strtolower($pageConfig['route']), $pageConfig['controller'].'::'.$pageConfig['controllermethod'])
+    $x = $app->$pageConfig['method'](strtolower($pageConfig['route']), $pageConfig['controller'].'::'.$pageConfig['controllermethod'])
         ->bind($pageConfig['name'])
         ->after(function($request, $response) use($app, $pageConfig) {
             $data = $app[$pageConfig['controller'].'.data'];

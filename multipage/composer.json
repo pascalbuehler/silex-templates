@@ -2,6 +2,10 @@
     "require": {
         "silex/silex": "~2.0",
         "symfony/twig-bridge": "~2.3",
-        "lokhman/silex-config": "^2.1"
+        "lokhman/silex-config": "^2.1",
+        "symfony/form": "~2.3",
+        "symfony/validator": "^3.1",
+        "symfony/config": "^3.1",
+        "symfony/translation": "^3.1"
     }
 }

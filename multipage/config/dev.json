@@ -1,5 +1,6 @@
 {
     "version": "1.1",
+    "debug": true,
     "pages": {
         "Home": {
             "id": 1,
@@ -7,6 +8,7 @@
             "name": "Home",
             "level": 0,
             "route": "/",
+            "method": "get",
             "controller": "HomeController",
             "controllermethod": "home",
             "template": "pages/home.html.twig"
@@ -17,6 +19,7 @@
             "name": "Products",
             "level": 0,
             "route": "/products",
+            "method": "get",
             "controller": "ProductsController",
             "controllermethod": "products",
             "template": "pages/products.html.twig"
@@ -27,6 +30,7 @@
             "name": "ProductDetail",
             "level": 1,
             "route": "/products/{id}",
+            "method": "get",
             "controller": "ProductsController",
             "controllermethod": "productdetail",
             "template": "pages/productdetail.html.twig"
@@ -37,9 +41,21 @@
             "name": "About",
             "level": 0,
             "route": "/about",
+            "method": "get",
             "controller": "AboutController",
             "controllermethod": "about",
             "template": "pages/about.html.twig"
+        },
+        "Contact": {
+            "id": 4,
+            "parentid": 4,
+            "name": "Contact",
+            "level": 0,
+            "route": "/contact",
+            "method": "match",
+            "controller": "ContactController",
+            "controllermethod": "contact",
+            "template": "pages/contact.html.twig"
         }
     }
 }
